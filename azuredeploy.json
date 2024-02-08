@@ -200,7 +200,7 @@
                         "autoUpgradeMinorVersion": true,
                         "settings": {
                             "fileUris": [
-                                "https://raw.githubusercontent.com/itconsultor/mslearn-app-service-migration-assistant/master/vm-setup.ps1"
+                                "https://raw.githubusercontent.com/MicrosoftDocs/mslearn-app-service-migration-assistant/master/vm-setup.ps1"
                             ]
                         },
                         "protectedSettings": {
