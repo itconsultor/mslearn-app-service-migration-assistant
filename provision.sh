@@ -10,7 +10,7 @@ echo "Starting provisioning..."
 az deployment group create \
   --name $DEPLOYMENTNAME \
   --resource-group "$RESOURCEGROUP" \
-  --template-file "https://raw.githubusercontent.com/itconsultor/mslearn-app-service-migration-assistant/master/azuredeploy.json" \
+  --template-url "https://raw.githubusercontent.com/itconsultor/mslearn-app-service-migration-assistant/master/azuredeploy.json" \
   --parameters username=$USERNAME password=$PASSWORD \
   --no-wait
 
