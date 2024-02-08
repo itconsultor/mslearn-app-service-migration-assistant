@@ -4,15 +4,12 @@
 read -p "Enter the Azure Resource Group name: " resourceGroupName
 
 # Check if the resource group already exists
-existingResourceGroup=$(az group show --name $resourceGroupName --query 'name' -o tsv)
-
-if [ "$existingResourceGroup" == "$resourceGroupName" ]; then
-  echo "Resource Group '$resourceGroupName' already exists. Exiting..."
-  exit 1
+if [ $(az group exists --name $resourceGroupName) = false ]; then
+    az group create --name $resourceGroupName --location eastus
+else
+    echo "Resource Group '$resourceGroupName' already exists. Exiting..."
+    exit 1
 fi
-
-# Create Azure Resource Group
-az group create --name $resourceGroupName --location eastus
 
 RESOURCEGROUP=$resourceGroupName
 USERNAME=mslearnuser
